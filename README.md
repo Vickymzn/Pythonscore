@@ -1,8 +1,8 @@
 # CricketAPI
 -----------------------------------------------------------------------------------------------------------
-					Cricket API - Live Scores | Commentary | ScoreCard
+					Cricket API - Live Scores | Commentary | ScoreCard | Best Players
 -----------------------------------------------------------------------------------------------------------
-CricketAPI aims to provide free access to all cricket matches via API for all ODIs, Tests & T20s (International and IPL). 
+CricketAPI aims to provide free access to all cricket matches via API for all ODIs, Tests & T20s (International and IPL) and all champion leagues like World Cup. 
 ## It includes following features:
 - Scorecards of matches 
 - Ball by Ball Commentary
