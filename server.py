@@ -5,34 +5,35 @@ import sys
 from bs4 import BeautifulSoup
 from cricbuzz import Cricbuzz
 from flask import Response
+from json2html import *
 app = Flask(__name__)
 
 @app.route('/getMatches')
 def getMatches():
     c = Cricbuzz()
     list =  c.matches()
-    return Response(json.dumps(list),  mimetype='application/json')
+    return json2html.convert(json=list)
 
 @app.route('/livescore')
 def getMatchInfo():
     matchId = request.args.get('matchId')
     c = Cricbuzz()
     list =  c.livescore(matchId)
-    return Response(json.dumps(list),  mimetype='application/json')
+    return json2html.convert(json=list)
 
 @app.route('/scorecard')
 def scorecard():
     matchId = request.args.get('matchId')
     c = Cricbuzz()
     list = c.scorecard(matchId)
-    return Response(json.dumps(list),  mimetype='application/json')
+    return json2html.convert(json=list)
 
 @app.route('/commentary')
 def commentary():
     matchId = request.args.get('matchId')
     c = Cricbuzz()
     list = c.commentary(matchId)
-    return Response(json.dumps(list),  mimetype='application/json')
+    return json2html.convert(json=list)
 
 if __name__ == '__main__':
     app.run(
